@@ -129,7 +129,7 @@ const users = [
   },
 ];
 
-app.get('/test', (req, res) => {
+app.get('/users', (req, res) => {
   res.send(users);
 });
 

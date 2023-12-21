@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   const makeApiRequest = async () => {
-    const response = await axios.get('/api/testwithcurrentuser');
+    const response = await axios.get('/api/users');
     console.log(response.data);
   };
 
