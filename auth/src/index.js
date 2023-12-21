@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const app = express();
 const { connectDb } = require('./helpers/db');
-const { host, port, db } = require('./configuration');
+const { host, port, db, apiUrl } = require('./configuration');
 
 const startServer = () => {
   app.listen(port, () => {
@@ -25,7 +25,12 @@ app.get('/api/currentUser', (req, res) => {
 })
 
 app.get('/testwithapidata', (req, res) => {
-
+  axios.get(apiUrl + '/testapidata').then((response) => {
+    res.json({
+      testapidata: response.data.testwithapi,
+      v: 1
+    });
+  })
 })
 
 connectDb()
