@@ -21,3 +21,9 @@ services:
   nginx:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+
+  users:
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./users/src:/usr/src/app/src
